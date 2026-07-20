@@ -20,12 +20,21 @@ while program_running:
         print("Your Tasks list has been updated!")
     elif selection == "2":
         print("You have selected -View Tasks-")
-        print(str(tasks))
+        print ("-------------------------")
+        if not tasks:
+            print("Your tasks list is empty.")
+        else:
+            indice = list(enumerate(tasks, start=1))
+            print ("YOUR TASKS \n" + str(indice))
+        print ("--------------------------")
     elif selection == "3":
         print("You have selected -Delete Task-")
-        task_removed = input ("Remove a task: ")
-        tasks.remove (task_removed)
-        print("Your Tasks list has been updated!")
+        task_removed = input ("Enter the name of the task to remove: ")
+        if task_removed in tasks:
+            tasks.remove (task_removed)
+            print("Your Tasks list has been updated!")
+        else:
+            print("That task is not in your list.")
     elif selection == "4":
         print ("You have selected -Exit-")
         program_running = False
