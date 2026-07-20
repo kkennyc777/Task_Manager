@@ -1,5 +1,6 @@
 import time
 program_running = True
+tasks =[]
 while program_running:
     print("""===== TASK MANAGER =====
 
@@ -14,10 +15,17 @@ while program_running:
     selection = input("Choose an option: ")
     if selection == "1":
         print("You have selected -Add Task-")
+        task_added = input ("New Task: ")
+        tasks.append (task_added)
+        print("Your Tasks list has been updated!")
     elif selection == "2":
         print("You have selected -View Tasks-")
+        print(str(tasks))
     elif selection == "3":
         print("You have selected -Delete Task-")
+        task_removed = input ("Remove a task: ")
+        tasks.remove (task_removed)
+        print("Your Tasks list has been updated!")
     elif selection == "4":
         print ("You have selected -Exit-")
         program_running = False
