@@ -1,0 +1,25 @@
+import time
+program_running = True
+while program_running:
+    print("""===== TASK MANAGER =====
+
+    1. Add Task
+
+    2. View Tasks
+
+    3. Delete Task
+
+    4. Exit""")
+    time.sleep(0.2)
+    selection = input("Choose an option: ")
+    if selection == "1":
+        print("You have selected -Add Task-")
+    elif selection == "2":
+        print("You have selected -View Tasks-")
+    elif selection == "3":
+        print("You have selected -Delete Task-")
+    elif selection == "4":
+        print ("You have selected -Exit-")
+        program_running = False
+    else:
+        print("Please choose a correct option: 1,2,3 or 4")
