@@ -1,3 +1,1 @@
-datos = [(1, 'Clean'), (2, 'Drive')]
-for elementos in datos:
-    print (str(elementos[0])+ ".", elementos[1])
+input ("(Write -back- if you want to exit this mode) \nNew Task: ")
