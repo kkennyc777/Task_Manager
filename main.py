@@ -1,8 +1,8 @@
 import time
 program_running = True
-option1_running = False
-option3_running = False
-option1_1_running = False
+add_task_running = False
+add_multiple_tasks_running = False
+remove_task_running = False
 tasks =[]
 while program_running:
     print("""===== TASK MANAGER =====
@@ -24,25 +24,27 @@ while program_running:
     2. Add multiple tasks
 
     3. Back""")
-        option1_running =True
-        while option1_running:
-            selection_option1 = input ("Choose an option: ")
-            if selection_option1 == "1":
+        add_task_running =True
+        while add_task_running:
+            add_task_option_selection = input ("Choose an option: ")
+            if add_task_option_selection == "1":
                 task_added = input ("New Task: ")
                 tasks.append (task_added)
-                print("Your Tasks list has been updated!")
-            elif selection_option1 == "2":
-                option1_1_running = True
-                print("Write ""back"" if you want to exit this mode\n")
-                while option1_1_running:
+                add_task_running = False
+                print("Task "+""" " """+task_added+""" " """+" added")
+            elif add_task_option_selection == "2":
+                add_multiple_tasks_running = True
+                print("""Write "back" if you want to exit this mode\n""")
+                while add_multiple_tasks_running:
                     task_added = input ("New Task: ")
-                    tasks.append (task_added)
-                    print ("Task "+task_added+" added")
                     if task_added == "back":
-                        tasks.remove("back")
-                        option1_1_running = False
-            elif selection_option1 == "3":
-                option1_running = False
+                        add_multiple_tasks_running = False
+                        add_task_running = False
+                    else:
+                        tasks.append (task_added)
+                        print ("Task "+""" " """+task_added+""" " """+" added")
+            elif add_task_option_selection == "3":
+                add_task_running = False
             else:
                 print("Please choose a correct option: 1,2 or 3")
     elif selection == "2":
