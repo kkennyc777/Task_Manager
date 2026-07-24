@@ -54,18 +54,24 @@ while program_running:
         if not tasks:
             print("Your tasks list is empty.")
         else:
-            indice = list(enumerate(tasks, start=1))
-            for numero, tarea in indice:
+            indexed_tasks = list(enumerate(tasks, start=1))
+            for numero, tarea in indexed_tasks:
                 print (str(numero) + ".",tarea)
         print ("--------------------------")
     elif selection == "3":
-        print("You have selected -Delete Task-")
-        task_removed = input ("Enter the name of the task to remove: ")
-        if task_removed in tasks:
-            tasks.remove (task_removed)
-            print("Your Tasks list has been updated!")
-        else:
-            print("That task is not in your list.")
+        remove_task_running = True
+        while remove_task_running:
+            print("You have selected -Delete Task-")
+            task_removed = input ("Enter the number of the task to be removed: ")
+            print("YOUR TASKS:")
+            print ("-------------------------")
+            print (str(numero) + ".",tarea)
+            print ("--------------------------")
+        if task_removed != numero:
+            print("Please Choose a correct option.")
+        elif task_removed == numero:
+            tasks.remove (numero)
+            print("Your Tasks list has been updated!")            
     elif selection == "4":
         print ("You have selected -Exit-")
         program_running = False
